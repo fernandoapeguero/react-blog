@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import ArticlesList from "../components/ArticlesList";
 import articles from "./article-content";
 
 const ArticlePage = () => {
@@ -9,13 +10,20 @@ const ArticlePage = () => {
 
   if (!currentArticle) return <h1>Article does not exists.</h1>;
 
+  const otherArticles = articles.filter(
+    (article) => article.name !== currentArticle.name
+  );
+
   return (
-    <div>
+    <>
       <h1>{currentArticle.title}</h1>
       {currentArticle.content.map((text, key) => (
         <p key={key}>{text}</p>
       ))}
-    </div>
+
+      <h3>Other Articles</h3>
+      <ArticlesList articles={otherArticles} />
+    </>
   );
 };
 
