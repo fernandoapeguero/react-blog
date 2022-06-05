@@ -29,7 +29,7 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
     <div id="add-comment-form">
       <h3>Add Comment</h3>
       <label>
-        Name:{" "}
+        Name:
         <input
           type="text"
           name="text"
@@ -41,7 +41,7 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
       </label>
 
       <label>
-        Comment:{" "}
+        Comment:
         <textarea
           rows="4"
           cols="50"
